@@ -7,6 +7,7 @@ mmd -i fat.img ::/EFI
 mmd -i fat.img ::/EFI/BOOT
 mcopy -i fat.img BOOTX64.EFI ::/EFI/BOOT
 mcopy -i fat.img kernel.wasm ::
+mcopy -i fat.img font.psf ::
 qemu-system-x86_64  -pflash OVMF.fd -usb \
                                    -drive if=none,id=stick,format=raw,file=fat.img \
                                    -device nec-usb-xhci,id=xhci \
